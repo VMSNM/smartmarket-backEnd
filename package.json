@@ -1,0 +1,20 @@
+{
+  "name": "smartmarket-server",
+  "version": "1.0.0",
+  "description": "Smart Market BackEnd Server",
+  "main": "index.js",
+  "proxy": "http://localhost:3000",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0",
+    "nodemon": "^3.0.1"
+  }
+}
