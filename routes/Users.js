@@ -45,7 +45,8 @@ router.post('/', async (req, res) => {
 router.patch('/:id', async (req, res) => {
     try {
         const userID = req.params.id
-        const result = await User.findByIdAndUpdate({_id: userID}, req.body, {new: true})
+        const hashedPassword = await bcrypt.hash(req.body.password, 10)
+        const result = await User.findByIdAndUpdate({_id: userID}, {username: req.body.username, password: hashedPassword, watchlists: req.body.watchlists}, {new: true})
         res.send(result)
     } catch(error) {
         res.status(500).send(error.message)
