@@ -12,7 +12,9 @@ router.post('/', async (req, res) => {
         return res.json("Account doesnt exist")
     }
     try {
-        if (await bcrypt.compare(password, user.password)) {
+        console.log(password, user.password)
+        if (password === user.password) {
+        /* if (await bcrypt.compare(password, user.password)) { */
             res.json(user)
             
             const log = new Log({ username: user.username, date: new Date() })
